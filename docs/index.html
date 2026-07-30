@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Obby Geometric</title>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body class="dark" data-lang="en-US">
+  <header class="topbar" role="banner">
+    <div class="brand">Obby Geometric</div>
+
+    <div class="controls" role="region" aria-label="Controls">
+      <label class="sr-only" for="langSelect">Language</label>
+      <select id="langSelect" aria-label="Language selector">
+        <option value="en-US">EN-US</option>
+        <option value="pt-BR">PT-BR</option>
+        <option value="es-ES">ES-ES</option>
+      </select>
+
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+        <svg id="iconMoon" class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+        <svg id="iconSun" class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor" d="M6.76 4.84l-1.8-1.79L3.17 5.84l1.79 1.79 1.8-1.79zM1 13h3v-2H1v2zm10 8h2v-3h-2v3zm7.03-2.03l1.79 1.79 1.79-1.79-1.79-1.79-1.79 1.79zM20 11v2h3v-2h-3zM4.22 19.78l1.79-1.79-1.79-1.79-1.79 1.79 1.79 1.79zM11 1h2v3h-2V1zm7.78 4.22l-1.79 1.79 1.79 1.79 1.79-1.79-1.79-1.79zM12 6a6 6 0 100 12 6 6 0 000-12z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hud" aria-live="polite">
+      <div id="leaderstats" class="panel" role="status" aria-label="Leader stats">
+        <strong id="labelScore">Score</strong>: <span id="score">0</span>
+        &nbsp;|&nbsp;
+        <strong id="labelSaved">Saved</strong>: <span id="saved">0</span>
+        &nbsp;|&nbsp;
+        <strong id="labelLost">Lost</strong>: <span id="lost">0</span>
+      </div>
+
+      <div id="instructions" class="panel" aria-hidden="false"></div>
+    </section>
+
+    <section id="gameWrap">
+      <div id="gameArea" tabindex="0" aria-label="Game area"></div>
+    </section>
+
+    <section class="footer-controls" aria-hidden="false">
+      <button id="startBtn" class="primary">Start</button>
+      <button id="restartBtn" class="secondary">Restart</button>
+      <div id="status" class="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- Templates -->
+  <template id="obstacleTpl">
+    <div class="obstacle" role="img" aria-label="Obstacle"></div>
+  </template>
+
+  <template id="projectileTpl">
+    <div class="projectile" role="img" aria-label="Projectile"></div>
+  </template>
+
+  <script src="./src/script.js" type="module"></script>
+</body>
+</html>
